@@ -1,0 +1,20 @@
+<?php echo $this->zfcUserLoginWidget(); ?>
+<?php if (isset($this->controller) && $this->controller): ?>
+
+<dl>
+    <dt><?php echo $this->translate('Controller') ?>:</dt>
+    <dd><?php echo $this->escapeHtml($this->controller) ?>
+<?php
+if (isset($this->controller_class)
+    && $this->controller_class
+    && $this->controller_class != $this->controller
+) {
+    echo '(' . sprintf($this->translate('resolves to %s'), $this->escapeHtml($this->controller_class)) . ')';
+}
+?>
+</dd>
+</dl>
+
+<?php endif ?>
+
+
