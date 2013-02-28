@@ -1,2 +1,2 @@
-local.php
-*.local.php
+db_config.php
+*.db_config.php

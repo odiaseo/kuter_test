@@ -11,10 +11,29 @@
  * file.
  */
 
+include 'db_config.php';
+
 return array(
    'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'pgsql:dbname=zend_framework;host=localhost',
+        'dsn'            => "pgsql:dbname=$database;host=$host",
+        'username' => $user,
+        'password' => $password,
+    ),
+    'doctrine' => array(
+        'connection' => array(
+            // default connection name
+            'orm_default' => array(
+                'driverClass' => 'Doctrine\DBAL\Driver\PDOPgSql\Driver',
+                'params' => array(
+                    'host'     => $host,
+                    'port'     => $port,
+                    'user'     => $user,
+                    'password' => $password,
+                    'dbname'   => $database,
+                )
+            )
+        )
     ),
     'service_manager' => array(
         'factories' => array(

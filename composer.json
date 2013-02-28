@@ -4,11 +4,17 @@
     "license": "BSD-3-Clause",
     "keywords": [
         "framework",
+        "doctrine",
+        "orm",
+        "module",
         "zf2"
     ],
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
+        "doctrine/doctrine-module": "0.7.*",
+        "doctrine/orm": ">=2.3-dev,<2.5-dev",
+        "doctrine/dbal": ">=2.3-dev,<2.5-dev",
         "zendframework/zendframework": "2.*",
 	"zf-commons/zfc-base": "0.1.0",
 	"zf-commons/zfc-user": "0.1.0",
