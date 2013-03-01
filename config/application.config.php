@@ -6,6 +6,7 @@ return array(
 	'DoctrineORMModule',
 	'ZfcBase',
 	'ZfcUser',
+	'SynergyDataGrid',
 	'BjyAuthorize',
         'Application',
 	'Album',

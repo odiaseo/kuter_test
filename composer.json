@@ -13,12 +13,13 @@
     "require": {
         "php": ">=5.3.3",
         "doctrine/doctrine-module": "0.7.*",
-        "doctrine/doctrine-orm-module": "0.*",
+        "doctrine/doctrine-orm-module": "dev-master",
         "doctrine/orm": ">=2.3-dev,<2.5-dev",
         "doctrine/dbal": ">=2.3-dev,<2.5-dev",
-        "zendframework/zendframework": "2.*",
+        "zendframework/zendframework": "dev-master",
 	"zf-commons/zfc-base": "0.1.0",
 	"zf-commons/zfc-user": "0.1.0",
+	"synergy/synergydatagrid": "dev-master",
 	"bjyoungblood/bjy-authorize": "dev-master"
     }
 }
