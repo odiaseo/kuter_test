@@ -1,5 +1,5 @@
 CREATE TABLE disc (
-  id int(11) NOT NULL auto_increment,
+  id serial NOT NULL,
   artist varchar(100) NOT NULL,
   title varchar(100) NOT NULL,
   PRIMARY KEY (id)
@@ -24,4 +24,4 @@ $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
 ALTER FUNCTION fill_disc()
-  OWNER TO postgres;
+  OWNER TO kuter;

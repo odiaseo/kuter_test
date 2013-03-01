@@ -7,7 +7,7 @@ use Zend\Mvc\Controller\AbstractActionController,
     Disc\Form\DiscForm,
     Doctrine\ORM\EntityManager,
     Disc\Entity\Disc;
-
+use  SynergyDataGrid\Grid\JqGridFactory;
 class DiscController extends AbstractActionController
 {
     /**
@@ -121,5 +121,24 @@ class DiscController extends AbstractActionController
             'disc' => $this->getEntityManager()->find('Disc\Entity\Disc', $id)
 		//->getArrayCopy() // blad
         );
+    }
+    public function gridAction()
+    {
+        //replace {Entity_Name} with your entity name e.g. 'Application\Entity\User'
+
+        $serviceManager = $this->getServiceLocator() ;
+        $grid = $serviceManager->get('jqgrid')
+                               ->create('Disc\Entity\Disc');
+
+        /*$grid->setToolbar = array(true, 'bottom'); //optional
+        $grid->setToppager = true; //optional*/
+	$grid->setNavGrid(
+            array('edit' => false, 'add' => false, 'del' => false, 'view' => true, 'refresh' => true, 'search' => true, 'cloneToTop' => true)
+        );
+
+        $grid->render();
+
+        return array('grid' => $grid);
+
     }
 }
