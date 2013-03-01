@@ -96,7 +96,7 @@ return array(
                 // Below is the default index action used by the [ZendSkeletonApplication](https://github.com/zendframework/ZendSkeletonApplication)
                 array('controller' => 'Application\Controller\Index', 'roles' => array('user')),
                 array('controller' => 'Album\Controller\Album', 'roles' => array('user')),
-
+                array('controller' => 'Disc\Controller\Disc', 'roles' => array('user')),
             ),
 
             /* If this guard is specified here (i.e. it is enabled), it will block
@@ -110,6 +110,8 @@ return array(
                 // Below is the default index action used by the [ZendSkeletonApplication](https://github.com/zendframework/ZendSkeletonApplication)
                 array('route' => 'home', 'roles' => array('guest', 'user')),
                 array('route' => 'album', 'roles' => array('guest', 'user')),
+                array('route' => 'disc', 'roles' => array('guest', 'user')),
+
 
             ),
         ),

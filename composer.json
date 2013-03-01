@@ -13,6 +13,7 @@
     "require": {
         "php": ">=5.3.3",
         "doctrine/doctrine-module": "0.7.*",
+        "doctrine/doctrine-orm-module": "0.*",
         "doctrine/orm": ">=2.3-dev,<2.5-dev",
         "doctrine/dbal": ">=2.3-dev,<2.5-dev",
         "zendframework/zendframework": "2.*",
