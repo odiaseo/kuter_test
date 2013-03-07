@@ -132,9 +132,9 @@ class DiscController extends AbstractActionController
 
         /*$grid->setToolbar = array(true, 'bottom'); //optional
         $grid->setToppager = true; //optional*/
-	$grid->setNavGrid(
-            array('edit' => false, 'add' => false, 'del' => false, 'view' => true, 'refresh' => true, 'search' => true, 'cloneToTop' => true)
-        );
+	/* $grid->setNavGrid(
+            array('edit' => false, 'add' => false, 'del' => false, 'view' => true, 'refresh' => false, 'search' => true, 'cloneToTop' => true)
+        );*/
 
         $grid->render();
 

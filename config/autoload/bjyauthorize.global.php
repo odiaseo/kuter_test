@@ -97,6 +97,7 @@ return array(
                 array('controller' => 'Application\Controller\Index', 'roles' => array('user')),
                 array('controller' => 'Album\Controller\Album', 'roles' => array('user')),
                 array('controller' => 'Disc\Controller\Disc', 'roles' => array('user')),
+		array('controller' => 'DoctrineORMModule\Yuml\YumlController', 'roles' => array('user','guest')),
             ),
 
             /* If this guard is specified here (i.e. it is enabled), it will block
@@ -111,8 +112,7 @@ return array(
                 array('route' => 'home', 'roles' => array('guest', 'user')),
                 array('route' => 'album', 'roles' => array('guest', 'user')),
                 array('route' => 'disc', 'roles' => array('guest', 'user')),
-
-
+                array('route' => 'doctrine_orm_module_yuml', 'roles' => array('guest', 'user')),
             ),
         ),
     ),

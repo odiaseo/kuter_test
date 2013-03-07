@@ -13,6 +13,15 @@
 
 include 'db_config.php';
 
+$dbParams = array(
+    'database'  => $database,
+    'username'  => $user,
+    'password'  => $password,
+    'hostname'  => $host,
+    // buffer_results - only for mysqli buffered queries, skip for others
+    'options' => array('buffer_results' => true)
+);
+
 return array(
    'db' => array(
         'driver'         => 'Pdo',
@@ -39,6 +48,25 @@ return array(
         'factories' => array(
             'Zend\Db\Adapter\Adapter'
                     => 'Zend\Db\Adapter\AdapterServiceFactory',
+	    'Zend\Db\Adapter\Adapter' => function ($sm) use ($dbParams) {
+                $adapter = new BjyProfiler\Db\Adapter\ProfilingAdapter(array(
+                    'driver'    => 'pdo',
+                    'dsn'       => 'pgsql:dbname='.$dbParams['database'].';host='.$dbParams['hostname'],
+                    'database'  => $dbParams['database'],
+                    'username'  => $dbParams['username'],
+                    'password'  => $dbParams['password'],
+                    'hostname'  => $dbParams['hostname'],
+                ));
+
+                $adapter->setProfiler(new BjyProfiler\Db\Profiler\Profiler);
+                if (isset($dbParams['options']) && is_array($dbParams['options'])) {
+                    $options = $dbParams['options'];
+                } else {
+                    $options = array();
+                }
+                $adapter->injectProfilingStatementPrototype($options);
+                return $adapter;
+            },
         ),
     ),
 );
